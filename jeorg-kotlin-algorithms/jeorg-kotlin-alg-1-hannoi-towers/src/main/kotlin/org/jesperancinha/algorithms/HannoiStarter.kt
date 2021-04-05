@@ -9,43 +9,85 @@ fun main(args: Array<String>) {
 }
 
 fun calculateLeftNode(firstNode: PiramidElement): PiramidElement? {
+    for (i in 0..firstNode.positions.size) {
+        val piramidElement = calculateLeftNodePerPos(firstNode, i)
+        if (piramidElement != null) {
+            return piramidElement;
+        }
+    }
 
+    return null
+}
+
+private fun calculateLeftNodePerPos(firstNode: PiramidElement, pos: Int): PiramidElement? {
     val positions = firstNode.positions
-    for (i in 0..positions[0] - 1) {
+    for (i in 0..positions[pos] - 1) {
         val delta = i + 1
-        if (positions[0] - delta > 0) {
-            return PiramidElement(intArrayOf(positions[0] - delta, positions[1], positions[2]))
+        if (positions[pos] - delta > 0) {
+            val allPositions = intArrayOf(positions[0], positions[1], positions[2])
+            allPositions[pos] = allPositions[pos] - delta
+            if (firstNode.up == null || !(firstNode.up!!.positions contentEquals allPositions)) {
+                return PiramidElement(allPositions)
+            }
         }
 
     }
-    for (i in positions[0] - 1..positions.size) {
+    for (i in positions[pos] - 1..positions.size) {
         val delta = i + 1
-        if (positions[0] + delta <= positions.size) {
-            return PiramidElement(intArrayOf(positions[0] + delta, positions[1], positions[2]))
+        if (positions[pos] + delta <= positions.size) {
+            val allPositions = intArrayOf(positions[0], positions[1], positions[2])
+            allPositions[pos] = allPositions[pos] + delta
+            if (firstNode.up == null ||
+                !(firstNode.up!!.positions contentEquals allPositions)
+                && allPositions[pos] != allPositions[pos - 1]
+            ) {
+                return PiramidElement(allPositions)
+            }
         }
     }
     return null;
 }
 
 fun calculateRightNode(firstNode: PiramidElement): PiramidElement? {
+    for (i in 0..firstNode.positions.size-1) {
+        val piramidElement = calculateRightNodePerPos(firstNode, i)
+        if (piramidElement != null) {
+            return piramidElement;
+        }
+    }
+    return null;
+}
+
+private fun calculateRightNodePerPos(firstNode: PiramidElement, pos: Int): PiramidElement? {
     var found = false;
     val positions = firstNode.positions
-    for (i in 0..positions[0] - 1) {
+    for (i in 0..positions[pos] - 1) {
         val delta = i + 1
-        if (positions[0] - delta > 0) {
+        if (positions[pos] - delta > 0) {
             if (found) {
-                return PiramidElement(intArrayOf(positions[0] - delta, positions[1], positions[2]))
+                val allPositions = intArrayOf(positions[0], positions[1], positions[2])
+                allPositions[pos] = allPositions[pos] - delta
+                if (firstNode.up == null || !(firstNode.up!!.positions contentEquals allPositions)) {
+                    return PiramidElement(allPositions)
+                }
             } else {
                 found = true;
             }
         }
 
     }
-    for (i in positions[0] - 1..positions.size) {
+    for (i in positions[pos] - 1..positions.size) {
         val delta = i + 1
-        if (positions[0] + delta <= positions.size) {
+        if (positions[pos] + delta <= positions.size) {
             if (found) {
-                return PiramidElement(intArrayOf(positions[0] + delta, positions[1], positions[2]))
+                val allPositions = intArrayOf(positions[0], positions[1], positions[2])
+                allPositions[pos] = allPositions[pos] + delta
+                if (firstNode.up == null ||
+                    !(firstNode.up!!.positions contentEquals allPositions)
+                    && allPositions[pos] < allPositions[pos - 1]
+                ) {
+                    return PiramidElement(allPositions)
+                }
             } else {
                 found = true;
             }
@@ -53,5 +95,7 @@ fun calculateRightNode(firstNode: PiramidElement): PiramidElement? {
     }
     return null;
 }
+
+
 
 
