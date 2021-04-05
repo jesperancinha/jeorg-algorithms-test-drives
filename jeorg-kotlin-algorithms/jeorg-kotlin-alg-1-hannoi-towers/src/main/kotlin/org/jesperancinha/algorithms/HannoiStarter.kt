@@ -26,7 +26,10 @@ private fun calculateLeftNodePerPos(firstNode: PiramidElement, pos: Int): Pirami
         if (positions[pos] - delta > 0) {
             val allPositions = intArrayOf(positions[0], positions[1], positions[2])
             allPositions[pos] = allPositions[pos] - delta
-            if (firstNode.up == null || !(firstNode.up!!.positions contentEquals allPositions)) {
+            if ((firstNode.up == null || !(firstNode.up!!.positions contentEquals allPositions) &&
+                (firstNode.left == null || !(firstNode.left!!.positions contentEquals allPositions))&&
+                (firstNode.right == null || !(firstNode.right!!.positions contentEquals allPositions)))
+            ) {
                 return PiramidElement(allPositions)
             }
         }
@@ -37,8 +40,9 @@ private fun calculateLeftNodePerPos(firstNode: PiramidElement, pos: Int): Pirami
         if (positions[pos] + delta <= positions.size) {
             val allPositions = intArrayOf(positions[0], positions[1], positions[2])
             allPositions[pos] = allPositions[pos] + delta
-            if (firstNode.up == null ||
-                !(firstNode.up!!.positions contentEquals allPositions)
+            if ((firstNode.up == null || !(firstNode.up!!.positions contentEquals allPositions)) &&
+                        (firstNode.left == null || !(firstNode.left!!.positions contentEquals allPositions)) &&
+                (firstNode.right == null || !(firstNode.right!!.positions contentEquals allPositions))
                 && (pos == 0 || allPositions[pos] != allPositions[pos - 1])
             ) {
                 return PiramidElement(allPositions)
@@ -49,7 +53,7 @@ private fun calculateLeftNodePerPos(firstNode: PiramidElement, pos: Int): Pirami
 }
 
 fun calculateRightNode(firstNode: PiramidElement): PiramidElement? {
-    for (i in 0..firstNode.positions.size-1) {
+    for (i in 0..firstNode.positions.size - 1) {
         val piramidElement = calculateRightNodePerPos(firstNode, i)
         if (piramidElement != null) {
             return piramidElement;

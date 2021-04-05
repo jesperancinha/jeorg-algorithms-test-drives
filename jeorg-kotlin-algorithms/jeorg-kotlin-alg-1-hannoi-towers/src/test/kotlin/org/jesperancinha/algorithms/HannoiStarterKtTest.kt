@@ -22,7 +22,7 @@ class HannoiStarterKtTest : DescribeSpec({
         val firstNode = PiramidElement(starNode)
         val leftNode = calculateLeftNode(firstNode)
         leftNode!!.positions shouldBe intArrayOf(2, 1, 1)
-        firstNode.left = leftNode;
+        firstNode.lowLeft = leftNode;
         leftNode.up = firstNode
         val leftNode2 = calculateLeftNode(leftNode)
         leftNode2!!.positions shouldBe intArrayOf(2, 3, 1)
@@ -32,12 +32,28 @@ class HannoiStarterKtTest : DescribeSpec({
         val firstNode = PiramidElement(starNode)
         val rightNode = calculateRightNode(firstNode)
         rightNode!!.positions shouldBe intArrayOf(3, 1, 1)
-        firstNode.right = rightNode;
+        firstNode.lowRight = rightNode;
         rightNode.up = firstNode
         val rightNode2 = calculateRightNode(rightNode)
         rightNode2 shouldBe null
     }
-    describe("Left Node Calculation 3nd Level") {
+    describe("Right Node Calculation 3rd Level") {
+        val starNode = intArrayOf(1, 1, 1)
+        val firstNode = PiramidElement(starNode)
+        val rightNode = calculateRightNode(firstNode)
+        rightNode!!.positions shouldBe intArrayOf(3, 1, 1)
+        val leftNode = calculateLeftNode(firstNode)
+        leftNode!!.positions shouldBe intArrayOf(2, 1, 1)
+        leftNode.right = rightNode
+        rightNode.left = leftNode
+        firstNode.lowRight = rightNode
+        firstNode.lowLeft = leftNode
+        rightNode.up = firstNode
+        leftNode.up = firstNode
+        val rightNode2 = calculateLeftNode(rightNode)
+        rightNode2!!.positions shouldBe intArrayOf(3, 2, 1)
+    }
+    describe("Left Node Calculation 3rd Level") {
         val starNode = intArrayOf(1, 1, 1)
         val firstNode = PiramidElement(starNode)
         val leftNode = calculateLeftNode(firstNode)
