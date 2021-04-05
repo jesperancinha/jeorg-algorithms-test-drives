@@ -51,7 +51,10 @@ class HannoiStarterKtTest : DescribeSpec({
         rightNode.up = firstNode
         leftNode.up = firstNode
         val rightNode2 = calculateLeftNode(rightNode)
+        rightNode.lowRight = rightNode2
         rightNode2!!.positions shouldBe intArrayOf(3, 2, 1)
+        rightNode2.up = rightNode
+        println(firstNode)
     }
     describe("Left Node Calculation 3rd Level") {
         val starNode = intArrayOf(1, 1, 1)
