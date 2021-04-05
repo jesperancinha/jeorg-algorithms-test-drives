@@ -39,7 +39,7 @@ private fun calculateLeftNodePerPos(firstNode: PiramidElement, pos: Int): Pirami
             allPositions[pos] = allPositions[pos] + delta
             if (firstNode.up == null ||
                 !(firstNode.up!!.positions contentEquals allPositions)
-                && allPositions[pos] != allPositions[pos - 1]
+                && (pos == 0 || allPositions[pos] != allPositions[pos - 1])
             ) {
                 return PiramidElement(allPositions)
             }
@@ -76,7 +76,7 @@ private fun calculateRightNodePerPos(firstNode: PiramidElement, pos: Int): Piram
         }
 
     }
-    for (i in positions[pos] - 1..positions.size) {
+    for (i in 0..positions.size) {
         val delta = i + 1
         if (positions[pos] + delta <= positions.size) {
             if (found) {
@@ -84,7 +84,7 @@ private fun calculateRightNodePerPos(firstNode: PiramidElement, pos: Int): Piram
                 allPositions[pos] = allPositions[pos] + delta
                 if (firstNode.up == null ||
                     !(firstNode.up!!.positions contentEquals allPositions)
-                    && allPositions[pos] < allPositions[pos - 1]
+                    && (pos == 0 || allPositions[pos] < allPositions[pos - 1])
                 ) {
                     return PiramidElement(allPositions)
                 }
