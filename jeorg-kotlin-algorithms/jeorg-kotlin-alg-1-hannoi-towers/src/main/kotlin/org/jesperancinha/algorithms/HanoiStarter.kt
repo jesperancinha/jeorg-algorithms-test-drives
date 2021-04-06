@@ -1,11 +1,11 @@
 package org.jesperancinha.algorithms
 
-import org.jesperancinha.algorithms.data.PiramidElement
+import org.jesperancinha.algorithms.data.PyramidElement
 
 
 fun main(args: Array<String>) {
     val startPositions = intArrayOf(1, 1, 1)
-    val firstNode = PiramidElement(startPositions)
+    val firstNode = PyramidElement(startPositions)
     calculateStartTriangle(firstNode)
 
     println("This is how you move the plates in an Hannoi Tower");
@@ -28,17 +28,17 @@ fun main(args: Array<String>) {
 }
 
 
-fun calculateStartTriangle(firstNode: PiramidElement) {
-    val nodeMap = mutableMapOf<String, PiramidElement>()
+fun calculateStartTriangle(firstNode: PyramidElement) {
+    val nodeMap = mutableMapOf<String, PyramidElement>()
     calculateTriangle(firstNode, null, nodeMap)
 
     println(firstNode)
 }
 
 fun calculateTriangle(
-    firstNode: PiramidElement,
+    firstNode: PyramidElement,
     ignorePositions: IntArray?,
-    nodeMap: MutableMap<String, PiramidElement>
+    nodeMap: MutableMap<String, PyramidElement>
 ) {
     for (i in 0..2) {
         val calculatePiramidMoves = calculatePiramidMoves(firstNode.positions, ignorePositions, i)
@@ -54,8 +54,8 @@ fun calculateTriangle(
     }
 }
 
-fun calculatePiramidMoves(positions: IntArray, ignorePositions: IntArray?, i: Int): List<PiramidElement> {
-    val calcList = mutableListOf<PiramidElement>()
+fun calculatePiramidMoves(positions: IntArray, ignorePositions: IntArray?, i: Int): List<PyramidElement> {
+    val calcList = mutableListOf<PyramidElement>()
     val canMove: Boolean = canMove(positions, i)
     if (canMove) {
         if (i == 0) {
@@ -64,7 +64,7 @@ fun calculatePiramidMoves(positions: IntArray, ignorePositions: IntArray?, i: In
                     val newPositions = positions.clone()
                     newPositions[0] = j + 1
                     if (ignorePositions == null || !ignorePositions.contentEquals(newPositions)) {
-                        calcList.add(PiramidElement(newPositions))
+                        calcList.add(PyramidElement(newPositions))
                     }
                 }
             }
@@ -76,7 +76,7 @@ fun calculatePiramidMoves(positions: IntArray, ignorePositions: IntArray?, i: In
                     val newPositions = positions.clone()
                     newPositions[1] = j + 1
                     if (ignorePositions == null || !ignorePositions.contentEquals(newPositions)) {
-                        calcList.add(PiramidElement(newPositions))
+                        calcList.add(PyramidElement(newPositions))
                     }
                 }
             }
@@ -88,7 +88,7 @@ fun calculatePiramidMoves(positions: IntArray, ignorePositions: IntArray?, i: In
                     val newPositions = positions.clone()
                     newPositions[2] = j + 1
                     if (ignorePositions == null || !ignorePositions.contentEquals(newPositions)) {
-                        calcList.add(PiramidElement(newPositions))
+                        calcList.add(PyramidElement(newPositions))
                     }
                 }
             }
