@@ -2,104 +2,87 @@ package org.jesperancinha.algorithms
 
 import org.jesperancinha.algorithms.data.PiramidElement
 
+val nodeMap = mutableMapOf<String, PiramidElement>()
+
 fun main(args: Array<String>) {
     val starNode = intArrayOf(1, 1, 1)
     val firstNode = PiramidElement(starNode)
-    firstNode.lowLeft = calculateLeftNode(firstNode)
+    calculateStartTriangle(firstNode)
 }
 
-fun calculateLeftNode(firstNode: PiramidElement): PiramidElement? {
-    for (i in 0..firstNode.positions.size) {
-        val piramidElement = calculateLeftNodePerPos(firstNode, i)
-        if (piramidElement != null) {
-            return piramidElement;
-        }
-    }
+fun calculateStartTriangle(firstNode: PiramidElement) {
+    nodeMap.clear()
+    calculateTriangle(firstNode, null)
 
-    return null
+    println(firstNode)
 }
 
-private fun calculateLeftNodePerPos(firstNode: PiramidElement, pos: Int): PiramidElement? {
-    val positions = firstNode.positions
-    for (i in 0..positions[pos] - 1) {
-        val delta = i + 1
-        if (positions[pos] - delta > 0) {
-            val allPositions = intArrayOf(positions[0], positions[1], positions[2])
-            allPositions[pos] = allPositions[pos] - delta
-            if ((firstNode.up == null || !(firstNode.up!!.positions contentEquals allPositions) &&
-                (firstNode.left == null || !(firstNode.left!!.positions contentEquals allPositions))&&
-                (firstNode.right == null || !(firstNode.right!!.positions contentEquals allPositions)))
-            ) {
-                return PiramidElement(allPositions)
-            }
-        }
-
+fun calculateTriangle(firstNode: PiramidElement, ignorePositions: IntArray?) {
+    for (i in 0..2) {
+        val calculatePiramidMoves = calculatePiramidMoves(firstNode.positions, ignorePositions, i)
+        firstNode.connections.addAll(calculatePiramidMoves)
     }
-    for (i in positions[pos] - 1..positions.size) {
-        val delta = i + 1
-        if (positions[pos] + delta <= positions.size) {
-            val allPositions = intArrayOf(positions[0], positions[1], positions[2])
-            allPositions[pos] = allPositions[pos] + delta
-            if ((firstNode.up == null || !(firstNode.up!!.positions contentEquals allPositions)) &&
-                        (firstNode.left == null || !(firstNode.left!!.positions contentEquals allPositions)) &&
-                (firstNode.right == null || !(firstNode.right!!.positions contentEquals allPositions))
-                && (pos == 0 || allPositions[pos] != allPositions[pos - 1])
-            ) {
-                return PiramidElement(allPositions)
+    nodeMap[firstNode.positions.contentToString()] = firstNode
+    if (firstNode.connections.size > 0) {
+        firstNode.connections.forEach {
+            if(nodeMap[it.positions.contentToString()] ==null) {
+                calculateTriangle(it, firstNode.positions)
             }
         }
     }
-    return null;
 }
 
-fun calculateRightNode(firstNode: PiramidElement): PiramidElement? {
-    for (i in 0..firstNode.positions.size - 1) {
-        val piramidElement = calculateRightNodePerPos(firstNode, i)
-        if (piramidElement != null) {
-            return piramidElement;
-        }
-    }
-    return null;
-}
-
-private fun calculateRightNodePerPos(firstNode: PiramidElement, pos: Int): PiramidElement? {
-    var found = false;
-    val positions = firstNode.positions
-    for (i in 0..positions[pos] - 1) {
-        val delta = i + 1
-        if (positions[pos] - delta > 0) {
-            if (found) {
-                val allPositions = intArrayOf(positions[0], positions[1], positions[2])
-                allPositions[pos] = allPositions[pos] - delta
-                if (firstNode.up == null || !(firstNode.up!!.positions contentEquals allPositions)) {
-                    return PiramidElement(allPositions)
+fun calculatePiramidMoves(positions: IntArray, ignorePositions: IntArray?, i: Int): List<PiramidElement> {
+    val calcList = mutableListOf<PiramidElement>()
+    val canMove: Boolean = canMove(positions, i)
+    if (canMove) {
+        if (i == 0) {
+            for (j in 0..positions.size - 1) {
+                if (j + 1 != positions[0]) {
+                    val newPositions = positions.clone()
+                    newPositions[0] = j + 1
+                    if (ignorePositions == null || !ignorePositions.contentEquals(newPositions)) {
+                        calcList.add(PiramidElement(newPositions))
+                    }
                 }
-            } else {
-                found = true;
             }
         }
 
-    }
-    for (i in 0..positions.size) {
-        val delta = i + 1
-        if (positions[pos] + delta <= positions.size) {
-            if (found) {
-                val allPositions = intArrayOf(positions[0], positions[1], positions[2])
-                allPositions[pos] = allPositions[pos] + delta
-                if (firstNode.up == null ||
-                    !(firstNode.up!!.positions contentEquals allPositions)
-                    && (pos == 0 || allPositions[pos] < allPositions[pos - 1])
-                ) {
-                    return PiramidElement(allPositions)
+        if (i == 1) {
+            for (j in 0..positions.size - 1) {
+                if (j + 1 != positions[0] && j + 1 != positions[1]) {
+                    val newPositions = positions.clone()
+                    newPositions[1] = j + 1
+                    if (ignorePositions == null || !ignorePositions.contentEquals(newPositions)) {
+                        calcList.add(PiramidElement(newPositions))
+                    }
                 }
-            } else {
-                found = true;
+            }
+        }
+
+        if (i == 2) {
+            for (j in 0..positions.size - 1) {
+                if (positions.indexOf(j + 1) == -1) {
+                    val newPositions = positions.clone()
+                    newPositions[2] = j + 1
+                    if (ignorePositions == null || !ignorePositions.contentEquals(newPositions)) {
+                        calcList.add(PiramidElement(newPositions))
+                    }
+                }
             }
         }
     }
-    return null;
+    return calcList
 }
 
-
-
-
+fun canMove(positions: IntArray, i: Int): Boolean {
+    if (i == 0) {
+        return true;
+    }
+    for (j in 0 until i) {
+        if (positions[j] == positions[i]) {
+            return false
+        }
+    }
+    return true
+}
