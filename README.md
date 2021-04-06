@@ -13,6 +13,8 @@ Algorithm Study Project in different languages
 
 ### Books
 
+- H. Cormen, T. E. Leiserson, C. L. Rivest, R. Stein, C. (2017). <i>Introduction to Algorithms</i>. (Third Edition). MIT Press
+
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
