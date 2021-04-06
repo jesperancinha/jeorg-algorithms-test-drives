@@ -4,10 +4,29 @@ import org.jesperancinha.algorithms.data.PiramidElement
 
 
 fun main(args: Array<String>) {
-    val starNode = intArrayOf(1, 1, 1)
-    val firstNode = PiramidElement(starNode)
+    val startPositions = intArrayOf(1, 1, 1)
+    val firstNode = PiramidElement(startPositions)
     calculateStartTriangle(firstNode)
+
+    println("This is how you move the plates in an Hannoi Tower");
+
+    var startNode = firstNode
+    println(startNode.positions.contentToString())
+    val destination = intArrayOf(3, 3, 3)
+    while (startNode.connections.size != 0 && !startNode.positions.contentEquals(destination)) {
+
+        var i = startNode.connections.size - 1
+        while (startNode.connections[i].connections.size == 0) {
+            if (i > 0) {
+                i--
+            }
+        }
+
+        startNode = startNode.connections[i]
+        println(startNode.positions.contentToString())
+    }
 }
+
 
 fun calculateStartTriangle(firstNode: PiramidElement) {
     val nodeMap = mutableMapOf<String, PiramidElement>()
@@ -28,7 +47,7 @@ fun calculateTriangle(
     nodeMap[firstNode.positions.contentToString()] = firstNode
     if (firstNode.connections.size > 0) {
         firstNode.connections.forEach {
-            if(nodeMap[it.positions.contentToString()] ==null) {
+            if (nodeMap[it.positions.contentToString()] == null) {
                 calculateTriangle(it, firstNode.positions, HashMap(nodeMap))
             }
         }
