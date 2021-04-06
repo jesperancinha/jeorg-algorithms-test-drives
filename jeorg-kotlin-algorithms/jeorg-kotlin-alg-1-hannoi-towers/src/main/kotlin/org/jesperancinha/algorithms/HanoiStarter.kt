@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     val firstNode = PyramidElement(startPositions)
     calculateStartTriangle(firstNode)
 
-    println("This is how you move the plates in an Hannoi Tower");
+    println("This is how you move the plates in an Hanoi Tower");
 
     var startNode = firstNode
     println(startNode.positions.contentToString())
