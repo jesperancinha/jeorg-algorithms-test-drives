@@ -2,7 +2,6 @@ package org.jesperancinha.algorithms
 
 import org.jesperancinha.algorithms.data.PiramidElement
 
-val nodeMap = mutableMapOf<String, PiramidElement>()
 
 fun main(args: Array<String>) {
     val starNode = intArrayOf(1, 1, 1)
@@ -11,13 +10,17 @@ fun main(args: Array<String>) {
 }
 
 fun calculateStartTriangle(firstNode: PiramidElement) {
-    nodeMap.clear()
-    calculateTriangle(firstNode, null)
+    val nodeMap = mutableMapOf<String, PiramidElement>()
+    calculateTriangle(firstNode, null, nodeMap)
 
     println(firstNode)
 }
 
-fun calculateTriangle(firstNode: PiramidElement, ignorePositions: IntArray?) {
+fun calculateTriangle(
+    firstNode: PiramidElement,
+    ignorePositions: IntArray?,
+    nodeMap: MutableMap<String, PiramidElement>
+) {
     for (i in 0..2) {
         val calculatePiramidMoves = calculatePiramidMoves(firstNode.positions, ignorePositions, i)
         firstNode.connections.addAll(calculatePiramidMoves)
@@ -26,7 +29,7 @@ fun calculateTriangle(firstNode: PiramidElement, ignorePositions: IntArray?) {
     if (firstNode.connections.size > 0) {
         firstNode.connections.forEach {
             if(nodeMap[it.positions.contentToString()] ==null) {
-                calculateTriangle(it, firstNode.positions)
+                calculateTriangle(it, firstNode.positions, HashMap(nodeMap))
             }
         }
     }
