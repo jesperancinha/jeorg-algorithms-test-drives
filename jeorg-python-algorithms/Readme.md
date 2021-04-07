@@ -1,24 +1,20 @@
-# jeorg-algorithms-test-drives
-
-Algorithm Study Project in different languages
+# jeorg-python-algorithms - Python Algorithms
 
 ## Contents
-- [Kotlin](jeorg-kotlin-algorithms)
-  - [Hanoi Towers (Sierpiński Triangle)](jeorg-kotlin-algorithms/hannoi-towers) - 🗼 [Hanoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
-- [Python](./python)
-  - [Hanoi Towers (Iterative Version)](python/jeorg-python-alg1-hanoi-towers) - 🗼 [Hannoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
-
 
 ## References
 
 ### Online
 
+- [The Tortoise and the Hare](https://en.wikipedia.org/wiki/The_Tortoise_and_the_Hare)
+- [Cycle Detection](https://en.wikipedia.org/wiki/Cycle_detection)
 - [Hanoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
 - [Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)
 
 ### Books
 
 - H. Cormen, T. E. Leiserson, C. L. Rivest, R. Stein, C. (2017). <i>Introduction to Algorithms</i>. (Third Edition). MIT Press
+
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
