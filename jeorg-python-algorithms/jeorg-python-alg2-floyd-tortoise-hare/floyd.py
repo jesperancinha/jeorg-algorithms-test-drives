@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 def floyd(function_data):
     print('checking repetitions in', function_data)
     i_tortoise = 1
@@ -38,8 +41,22 @@ def floyd(function_data):
 
     print("Index of the first element in the cycle mu", mu)
     print("Length of the shortest cycle", lam)
-    return lam, mu
+    return lam, mu - 1
 
 
+before = datetime.now(tz=None)
+print(before)
 print(floyd([2, 0, 6, 3, 1, 6, 3, 1, 6, 3, 1]))
 print(floyd([1, 2, 3, 4, 5, 6, 5, 6, 5, 6, 5, 6, 5, 6, 6, 7, 5, 3, 4, 2, 4, 5, 7]))
+
+for i in range(1000):
+    print(floyd(
+        [1, 2, 3, 4, 5, 6, 5, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6,
+         6,
+         5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5, 6, 6, 5,
+         6,
+         6, 5, 6, 5, 6, 5, 6, 6, 7, 5, 3, 4, 2, 4, 5, 7]))
+
+after = datetime.now(tz=None)
+print(after)
+print(after - before)
