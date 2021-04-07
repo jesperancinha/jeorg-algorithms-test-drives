@@ -1,5 +1,5 @@
 def floyd(function_data):
-    print('checking repetitons in', function_data)
+    print('checking repetitions in', function_data)
     i_tortoise = 1
     i_hare = 2
     tortoise = function_data[i_tortoise]
