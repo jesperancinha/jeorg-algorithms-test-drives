@@ -4,6 +4,8 @@
 
 ### Online
 
+- [Breadth First Search or BFS for a Graph](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+- [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
 - [Breadth First Search](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
 
 ### Books
