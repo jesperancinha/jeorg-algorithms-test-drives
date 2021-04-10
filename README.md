@@ -1,5 +1,11 @@
 # jeorg-algorithms-test-drives
 
+[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
+[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
+[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
+
+---
+
 Algorithm Study Project in different languages
 
 ## Contents
