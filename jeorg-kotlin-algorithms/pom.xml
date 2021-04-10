@@ -8,6 +8,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>jeorg-kotlin-alg-1-hannoi-towers</module>
+        <module>jeorg-kotlin-alg-2-bfs</module>
     </modules>
 
     <properties>
