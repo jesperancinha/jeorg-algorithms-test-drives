@@ -1,63 +1,146 @@
 package org.jesperancinha.algorithms.bfs
 
 import org.jesperancinha.algorithms.bfs.model.Station
+import org.jesperancinha.algorithms.bfs.model.TravelNode
+import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
 
 fun main(args: Array<String>) {
     val railwaySystemMap = createRailwaySystem()
-    println(railwaySystemMap)
+    val start: Station? = railwaySystemMap["olhao"]
+    val end: Station? = railwaySystemMap["oliveiraDeAzemeis"]
+
+    ConsolerizerComposer.out()
+        .green("🚂 - We start travelling from %s", start)
+    val routeList = calculateRoutes(start!!, end!!, railwaySystemMap)
+    routeList.forEach {
+        val fastestRouteList = ArrayDeque<Station?>()
+        fastestRouteList.addFirst(railwaySystemMap[it.key])
+        var up = it;
+        do {
+            up = up.back!!;
+            fastestRouteList.addFirst(railwaySystemMap[up.key])
+        } while (up.back != null)
+        ConsolerizerComposer.outSpace().yellow(fastestRouteList)
+    }
+    ConsolerizerComposer.out()
+        .red("🚂 - We stop travelling at %s", end)
 }
+
+/**
+ * procedure BFS(G, root) is
+ *     let Q be a queue
+ *     label root as discovered
+ *     Q.enqueue(root)
+ *     while Q is not empty do
+ *         v := Q.dequeue()
+ *         if v is the goal then
+ *             return v
+ *         for all edges from v to w in G.adjacentEdges(v) do
+ *             if w is not labeled as discovered then
+ *                 label w as discovered
+ *                 Q.enqueue(w)
+ **/
+fun calculateRoutes(start: Station, end: Station, railwaySystemMap: HashMap<String, Station>): MutableList<TravelNode> {
+    val routes = mutableListOf<TravelNode>()
+    val queue = ArrayDeque<TravelNode>()
+    val currentNode = TravelNode(start.name, start.key)
+    val visited = mutableMapOf<String, Boolean>()
+
+    start.linkedStations.forEach {
+
+        val element = TravelNode(it.name, it.key)
+        queue.addFirst(element)
+        visited[it.name] = true
+        currentNode.linkedStations.add(element)
+        element.back = currentNode
+        if (it.key === end.key) {
+            routes.add(element)
+        }
+
+    }
+
+    resolve( queue, routes, end, visited, railwaySystemMap)
+    return routes
+}
+
+fun resolve(
+    queue: ArrayDeque<TravelNode>,
+    routes: MutableList<TravelNode>,
+    end: Station,
+    visited: MutableMap<String, Boolean>,
+    railwaySystemMap: HashMap<String, Station>
+) {
+    if (queue.isNotEmpty()) {
+        val removeLast = queue.removeLast()
+        val station = railwaySystemMap[removeLast.key]
+        station!!.linkedStations.forEach {
+            if (visited[it.key] === null || !visited[it.key]!!) {
+                val element = TravelNode(it.name, it.key)
+                queue.addFirst(element)
+                visited[it.key] = true
+                element.back = removeLast
+
+                if (it.key === end.key) {
+                    routes.add(element)
+                }
+            }
+        }
+        resolve(queue, routes, end, visited, railwaySystemMap)
+    }
+}
+
 
 private fun createRailwaySystem(): HashMap<String, Station> {
 
-    val olhao = Station("Olhão")
-    val faro = Station("Faro")
-    val tavira = Station("Tavira")
-    val vilaReal = Station("Vila Real de Santo António")
-    val tunes = Station("Tunes")
-    val portimao = Station("Portimão")
-    val lagos = Station("Lagos")
-    val funcheira = Station("Funcheira")
-    val lx = Station("Lisboa")
-    val sintra = Station("Sintra")
-    val cascais = Station("Cascais")
-    val azambuja = Station("Azambuja")
-    val vendasNovas = Station("Vendas Novas")
-    val setubal = Station("Setúbal")
-    val casaBranca = Station("Casa Branca")
-    val evora = Station("Évora")
-    val beja = Station("Beja")
-    val santarem = Station("Santarém")
-    val entroncamento = Station("Entroncamento")
-    val abrantes = Station("Abrantes")
-    val tomar = Station("Tomar")
-    val portalegre = Station("Portalegre")
-    val casteloBranco = Station("Castelo Branco")
-    val covilha = Station("Covilhã")
-    val elvas = Station("Elvas")
-    val coimbra = Station("Coimbra")
-    val figureiraFoz = Station("Figueira da Foz")
-    val leiria = Station("Leiria")
-    val caldasDaRainha = Station("Caldas da Rainha")
-    val pampilhosa = Station("Pampilhosa")
-    val guarda = Station("Guarda")
-    val vilarFormoso = Station("Vilar Formoso")
-    val aveiro = Station("Aveiro")
-    val agueda = Station("Águeda")
-    val sernadaVouga = Station("Sernada do Vouga")
-    val oliveiraDeAzemeis = Station("Oliveira de Azeméis")
-    val espinho = Station("Espinho")
-    val porto = Station("Porto")
-    val caide = Station("Caíde")
-    val regua = Station("Régua")
-    val tua = Station("Tua")
-    val pocinho = Station("Pocinho")
-    val guimaraes = Station("Guimarães")
-    val braga = Station("Braga")
-    val barcelos = Station("Barcelos")
-    val vianaCastelo = Station("Viana do Castelo")
-    val valenca = Station("Valença")
+    val olhao = Station("Olhão", "olhao")
+    val faro = Station("Faro","faro")
+    val tavira = Station("Tavira","tavira")
+    val vilaReal = Station("Vila Real de Santo António","vilaReal")
+    val tunes = Station("Tunes","tunes")
+    val portimao = Station("Portimão","portimao")
+    val lagos = Station("Lagos","lagos")
+    val funcheira = Station("Funcheira","funcheira")
+    val lx = Station("Lisboa","lx")
+    val sintra = Station("Sintra","sintra")
+    val cascais = Station("Cascais","cascais")
+    val azambuja = Station("Azambuja","azambuja")
+    val vendasNovas = Station("Vendas Novas","vendasNovas")
+    val setubal = Station("Setúbal","setubal")
+    val casaBranca = Station("Casa Branca","casaBranca")
+    val evora = Station("Évora","evora")
+    val beja = Station("Beja","beja")
+    val santarem = Station("Santarém","santarem")
+    val entroncamento = Station("Entroncamento","entroncamento")
+    val abrantes = Station("Abrantes","abrantes")
+    val tomar = Station("Tomar","tomar")
+    val portalegre = Station("Portalegre","portalegre")
+    val casteloBranco = Station("Castelo Branco","casteloBranco")
+    val covilha = Station("Covilhã","covilha")
+    val elvas = Station("Elvas","elvas")
+    val coimbra = Station("Coimbra","coimbra")
+    val figureiraFoz = Station("Figueira da Foz","figureiraFoz")
+    val leiria = Station("Leiria","leiria")
+    val caldasDaRainha = Station("Caldas da Rainha","caldasDaRainha")
+    val pampilhosa = Station("Pampilhosa","pampilhosa")
+    val guarda = Station("Guarda","guarda")
+    val vilarFormoso = Station("Vilar Formoso","vilarFormoso")
+    val aveiro = Station("Aveiro","aveiro")
+    val agueda = Station("Águeda","agueda")
+    val sernadaVouga = Station("Sernada do Vouga","sernadaVouga")
+    val oliveiraDeAzemeis = Station("Oliveira de Azeméis","oliveiraDeAzemeis")
+    val espinho = Station("Espinho","espinho")
+    val porto = Station("Porto","porto")
+    val caide = Station("Caíde","caide")
+    val regua = Station("Régua","regua")
+    val tua = Station("Tua","tua")
+    val pocinho = Station("Pocinho","pocinho")
+    val guimaraes = Station("Guimarães","guimaraes")
+    val braga = Station("Braga","braga")
+    val barcelos = Station("Barcelos","barcelos")
+    val vianaCastelo = Station("Viana do Castelo","vianaCastelo")
+    val valenca = Station("Valença","valenca")
 
-    val railMap = hashMapOf<String, Station>(
+    val railMap = hashMapOf(
         "olhao" to olhao,
         "faro" to faro,
         "tavira" to tavira,

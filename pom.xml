@@ -10,4 +10,14 @@
     <modules>
         <module>jeorg-kotlin-algorithms</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jesperancinha.console</groupId>
+                <artifactId>consolerizer</artifactId>
+                <version>2.0.9</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
