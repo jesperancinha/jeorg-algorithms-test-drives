@@ -10,6 +10,7 @@
         <module>jeorg-kotlin-alg-1-hannoi-towers</module>
         <module>jeorg-kotlin-alg-2-bfs</module>
         <module>jeorg-kotlin-alg-3-weigh-term-frequency</module>
+        <module>jeorg-kotlin-alg-4-latent-semantic-analysis</module>
     </modules>
 
     <properties>

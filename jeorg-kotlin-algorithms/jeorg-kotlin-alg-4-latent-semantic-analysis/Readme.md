@@ -1,27 +1,25 @@
-# jeorg-algorithms-test-drives
+# jeorg-kotlin-alg-4-latent-semantic-analysis
 
-[![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
+## Description
 
+Latent semantic analysis
 
-[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
-[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
-[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
-
----
-
-Algorithm Study Project in different languages
-
-## Contents
-- [Kotlin](jeorg-kotlin-algorithms)
-  - [Hanoi Towers (Sierpiński Triangle)](jeorg-kotlin-algorithms/hannoi-towers) - 🗼 [Hanoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
-- [Python](./python)
-  - [Hanoi Towers (Iterative Version)](python/jeorg-python-alg1-hanoi-towers) - 🗼 [Hannoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
 ## References
 
 ### Online
 
-- [Hanoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
-- [Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)
+- [How to Calculate the SVD from Scratch with Python - Machine Learning Mystery](https://machinelearningmastery.com/singular-value-decomposition-for-machine-learning/)
+- [SVD - Singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition)
+- [Document Similarity in Information Retrieval - University of Washington](https://courses.cs.washington.edu/courses/cse573/12sp/lectures/17-ir.pdf)
+- [Latent semantic indexing - Stanford University](https://nlp.stanford.edu/IR-book/html/htmledition/latent-semantic-indexing-1.html)
+- [Latent Semantic Analysis - Elsevier](https://www.sciencedirect.com/topics/computer-science/latent-semantic-analysis)
+- [Evaluating term and document similarity using Latent Semantic Analysis](https://roshansanthosh.wordpress.com/2016/02/18/evaluating-term-and-document-similarity-using-latent-semantic-analysis/)
+- [Document Similarity using NLTK and Scikit-Learn](https://www2.cs.duke.edu/courses/spring14/compsci290/assignments/lab02.html)
+- [Latent Semantic Analysis as Method for Automatic Question Scoring - David Tobinski and Oliver Kraft](http://ceur-ws.org/Vol-1100/paper9.pdf)
+- [Semantic Similarity of Documents Using Latent Semantic Analysis by Chelsea Boling](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.855.5331&rep=rep1&type=pdf)
+- [cosine: Cosine Measure (Matrices)](https://rdrr.io/cran/lsa/man/cosine.html)
+- [Cosine Similarity](https://www.geeksforgeeks.org/cosine-similarity/)
+- [Latent semantic analysis](https://en.wikipedia.org/wiki/Latent_semantic_analysis)
 
 ### Books
 
