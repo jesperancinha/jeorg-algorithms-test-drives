@@ -9,6 +9,7 @@
     <modules>
         <module>jeorg-kotlin-alg-1-hannoi-towers</module>
         <module>jeorg-kotlin-alg-2-bfs</module>
+        <module>jeorg-kotlin-alg-3-weigh-term-frequency</module>
     </modules>
 
     <properties>
