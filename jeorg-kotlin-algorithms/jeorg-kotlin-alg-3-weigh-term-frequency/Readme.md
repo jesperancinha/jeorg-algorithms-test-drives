@@ -4,6 +4,8 @@
 
 The goal of this exercises is to explore the basic concepts of Weight Similarity between sentences and the application of the cosine similarity formula.
 
+Nothing is done in this example in regards to semantics comparison.
+
 ## References
 
 ### Context
