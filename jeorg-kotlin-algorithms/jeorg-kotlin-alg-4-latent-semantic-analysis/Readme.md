@@ -2,12 +2,19 @@
 
 ## Description
 
-Latent semantic analysis
+Latent semantic analysis (LSA)
 
 ## References
 
 ### Online
 
+- [Latent Semantic Analysis(Tutorial) by Alex Thomo](https://www.engr.uvic.ca/~seng474/svd.pdf)
+- [NIST Math Jama](https://mvnrepository.com/artifact/gov.nist.math.jama/gov.nist.math.jama)
+- [Class SingularValueDecomposition](https://math.nist.gov/javanumerics/jama/doc/Jama/SingularValueDecomposition.html)
+- [Eigenvalues.java](https://introcs.cs.princeton.edu/java/95linear/Eigenvalues.java.html)
+- [Whitman College - SVD Examples](http://people.whitman.edu/~hundledr/courses/M240S16/M240/TheSVD.pdf)
+- [SVD Calculation Examples - University of Ottawa - Canada](https://mysite.science.uottawa.ca/phofstra/MAT2342/SVDproblems.pdf)
+- [Singular Value Decomposition (SVD) tutorial - MIT](https://web.mit.edu/be.400/www/SVD/Singular_Value_Decomposition.htm)
 - [How to Calculate the SVD from Scratch with Python - Machine Learning Mystery](https://machinelearningmastery.com/singular-value-decomposition-for-machine-learning/)
 - [SVD - Singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition)
 - [Document Similarity in Information Retrieval - University of Washington](https://courses.cs.washington.edu/courses/cse573/12sp/lectures/17-ir.pdf)
@@ -20,6 +27,20 @@ Latent semantic analysis
 - [cosine: Cosine Measure (Matrices)](https://rdrr.io/cran/lsa/man/cosine.html)
 - [Cosine Similarity](https://www.geeksforgeeks.org/cosine-similarity/)
 - [Latent semantic analysis](https://en.wikipedia.org/wiki/Latent_semantic_analysis)
+
+<div align="center">
+      <a title="Finding Eigenvalues and Eigenvectors : 2 x 2 Matrix Example" href="https://www.youtube.com/watch?v=IdsV0RaC9jM">
+     <img 
+          src="https://img.youtube.com/vi/IdsV0RaC9jM/0.jpg" 
+          style="width:10%;">
+      </a>
+      <a title="How to find Singular Value Decomposition quick and easy - Linear algebra explained right
+" href="https://www.youtube.com/watch?v=Ls2TgGFfZnU">
+     <img 
+          src="https://img.youtube.com/vi/Ls2TgGFfZnU/0.jpg" 
+          style="width:10%;">
+      </a>
+</div>
 
 ### Books
 

@@ -1,10 +1,9 @@
 package org.jesperancinha.algorithms.weigh.term.frequency
 
+import Jama.EigenvalueDecomposition
+import Jama.Matrix
+import Jama.SingularValueDecomposition
 import org.jesperancinha.console.consolerizer.console.ConsolerizerComposer
-import org.jetbrains.numkt.array
-import org.jetbrains.numkt.core.ExperimentalNumkt
-import org.jetbrains.numkt.core.KtNDArray
-import org.jetbrains.numkt.linalg.Linalg
 
 val stopWords = arrayOf(
     "I",
@@ -57,12 +56,63 @@ fun main(args: Array<String>) {
     val tf = calculateU(listOf(sentence1, sentence2, sentence3, sentence4, sentence5, sentence6, sentence7))
 
     calculateSVD(tf)
+
+    val N = 4
+
+    // create a symmetric positive definite matrix
+
+    // create a symmetric positive definite matrix
+//    var A: Matrix = Matrix.random(N, N)
+    var A: Matrix = Matrix.constructWithCopy(
+        arrayOf(
+            doubleArrayOf(2.0, 4.0),
+            doubleArrayOf(1.0, 3.0),
+            doubleArrayOf(0.0,0.0),
+            doubleArrayOf(0.0, 0.0),
+        )
+    )
+
+    val singularValueDecomposition = SingularValueDecomposition(A)
+    print("The real V =")
+    singularValueDecomposition.v.print(9,6)
+    print("The real U =")
+    singularValueDecomposition.u.print(9,6)
+    print("The real S =")
+    singularValueDecomposition.s.print(9,6)
+    print("A =")
+    A.print(9, 6)
+    A = A.times(A.transpose())
+    print("ATA =")
+    A.print(9, 6)
+
+    // compute the spectral decomposition
+
+    // compute the spectral decomposition
+    val e: EigenvalueDecomposition = A.eig()
+    val V: Matrix = e.v
+    val D: Matrix = e.d
+
+    print("A =")
+    A.print(2, 0)
+    print("D =")
+    D.print(9, 6)
+    print("V =")
+    V.print(9, 6)
+    // check that V is orthogonal
+
+    // check that V is orthogonal
+    print("||V * V^T - I|| = ")
+    println(V.times(V.transpose()).minus(Matrix.identity(N, N)).normInf())
+
+    // check that A V = D V
+
+    // check that A V = D V
+    print("||AV - DV|| = ")
+    println(A.times(V).minus(V.times(D)).normInf())
 }
 
-@ExperimentalNumkt
 fun calculateSVD(tf: List<Array<Any>>) {
-//    array(arrayOf(1, 2, 3))
-    val tfArray =  tf.map { it.copyOfRange(1,it.size).map { number -> number as Int } } as List<List<Int>>
+    val tfArray = tf.map { it.copyOfRange(1, it.size).map { number -> number as Int } } as List<List<Int>>
 //    val ktndArray  = org.jetbrains.numkt.array<Long>(tfArray)
 //    print(ktndArray)
 //    Linalg.svd(ktndArray)
