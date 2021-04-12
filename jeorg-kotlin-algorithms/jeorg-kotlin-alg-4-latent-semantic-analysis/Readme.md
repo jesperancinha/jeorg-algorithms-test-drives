@@ -13,7 +13,7 @@ In order to analyse a semantic approach I've used two conceptual sets of sentenc
 
 In both cases, the semantic proximity between words will never match reality simply because the data set as source is not enough to make conlusions. However, with a bit of trial and error, we can see that this is a reliable algorithm from a certain point.
 
-Note that these sentences are made up by me. They do not reflect necessarily my opinion, and they do not necessarily reflect what I have experienced. They are, if anything, pure fiction.
+Note that these sentences are made up by me. They do not necessarily reflect what I have experienced. They are, if anything, pure fiction.
 
 Basically, in others words, every word we use is more often used in certain contexts and that is what this algorithm achieves.
 
