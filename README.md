@@ -12,10 +12,11 @@
 Algorithm Study Project in different languages
 
 ## Contents
-- [Kotlin](jeorg-kotlin-algorithms)
-  - [Hanoi Towers (Sierpiński Triangle)](jeorg-kotlin-algorithms/hannoi-towers) - 🗼 [Hanoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
-- [Python](./python)
-  - [Hanoi Towers (Iterative Version)](python/jeorg-python-alg1-hanoi-towers) - 🗼 [Hannoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
+
+1. [Javascript Implemented Algorithms](./jeorg-javascript-algorithms)
+2. [Kotlin Implemented Algorithms](./jeorg-kotlin-algorithms)
+3. [Python Implemented Algorithms](./jeorg-python-algorithms)
+
 ## References
 
 ### Online
