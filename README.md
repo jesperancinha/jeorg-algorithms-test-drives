@@ -11,20 +11,20 @@ Algorithm Study Project in different languages
 
 ## Contents
 
-1. [Javascript Implemented Algorithms](./jeorg-javascript-algorithms)
-2. [Kotlin Implemented Algorithms](./jeorg-kotlin-algorithms)
-3. [Python Implemented Algorithms](./jeorg-python-algorithms)
+1.  [Javascript Implemented Algorithms](./jeorg-javascript-algorithms)
+2.  [Kotlin Implemented Algorithms](./jeorg-kotlin-algorithms)
+3.  [Python Implemented Algorithms](./jeorg-python-algorithms)
 
 ## References
 
 ### Online
 
-- [Hanoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
-- [Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)
+-   [Hanoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
+-   [Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)
 
 ### Books
 
-- H. Cormen, T. E. Leiserson, C. L. Rivest, R. Stein, C. (2017). <i>Introduction to Algorithms</i>. (Third Edition). MIT Press
+-   H. Cormen, T. E. Leiserson, C. L. Rivest, R. Stein, C. (2017). <i>Introduction to Algorithms</i>. (Third Edition). MIT Press
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 

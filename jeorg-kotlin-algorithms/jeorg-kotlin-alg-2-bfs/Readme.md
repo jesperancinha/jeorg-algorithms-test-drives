@@ -4,14 +4,14 @@
 
 ### Context
 
-- [Mapa Caminhos De Ferro Portugueses](https://www.cp.pt/passageiros/pt/como-viajar)
+-   [Mapa Caminhos De Ferro Portugueses](https://www.cp.pt/passageiros/pt/como-viajar)
 
 ### Online
 
-- [Breadth First Search (BFS) Algorithm with EXAMPLE](https://www.guru99.com/breadth-first-search-bfs-graph-example.html)
-- [Breadth First Search or BFS for a Graph](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
-- [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
-- [Breadth First Search](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
+-   [Breadth First Search (BFS) Algorithm with EXAMPLE](https://www.guru99.com/breadth-first-search-bfs-graph-example.html)
+-   [Breadth First Search or BFS for a Graph](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+-   [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
+-   [Breadth First Search](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
 
 ##### Breadth First Search Algorithm | Shortest Path | Graph Theory
 
@@ -25,7 +25,7 @@
 
 ### Books
 
-- H. Cormen, T. E. Leiserson, C. L. Rivest, R. Stein, C. (2017). <i>Introduction to Algorithms</i>. (Third Edition). MIT Press
+-   H. Cormen, T. E. Leiserson, C. L. Rivest, R. Stein, C. (2017). <i>Introduction to Algorithms</i>. (Third Edition). MIT Press
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
