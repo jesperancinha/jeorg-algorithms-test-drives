@@ -4,6 +4,14 @@
 [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Algorithms%20Test%20Drives🧮&color=informational)](https://github.com/jesperancinha/jeorg-algorithms-test-drives)
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
+[![jeorg-algorithms-test-drives](https://github.com/jesperancinha/jeorg-algorithms-test-drives/actions/workflows/jeorg-algorithms-test-drives.yml/badge.svg)](https://github.com/jesperancinha/jeorg-algorithms-test-drives/actions/workflows/jeorg-algorithms-test-drives.yml)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/417c4f8d4e6f4e7d873c69188d9068a6)](https://www.codacy.com/gh/jesperancinha/jeorg-algorithms-test-drives/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/jeorg-algorithms-test-drives&amp;utm_campaign=Badge_Grade)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/417c4f8d4e6f4e7d873c69188d9068a6)](https://www.codacy.com/gh/jesperancinha/jeorg-algorithms-test-drives/dashboard?utm_source=github.com&utm_medium=referral&utm_content=jesperancinha/jeorg-algorithms-test-drives&utm_campaign=Badge_Coverage)
+[![Coverage Status](https://coveralls.io/repos/github/jesperancinha/jeorg-algorithms-test-drives/badge.svg?branch=main)](https://coveralls.io/github/jesperancinha/jeorg-algorithms-test-drives?branch=main)
+[![codecov](https://codecov.io/gh/jesperancinha/jeorg-algorithms-test-drives/branch/main/graph/badge.svg?token=SvigsGjSpT)](https://codecov.io/gh/jesperancinha/jeorg-algorithms-test-drives)
+
 [![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/jeorg-algorithms-test-drives.svg)](#)

@@ -101,6 +101,22 @@
                 <groupId>org.jesperancinha.plugins</groupId>
                 <artifactId>omni-coveragereporter-maven-plugin</artifactId>
                 <version>${omni-coveragereporter-maven-plugin.version}</version>
+                <configuration>
+                    <extraSourceFolders>
+                        <param>${project.basedir}</param>
+                        <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg-hanoi-towers</param>
+                        <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg2-floyd-tortoise-hare</param>
+                        <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg3-brent-tortoise-hare</param>
+                        <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg4-activity-selector</param>
+                    </extraSourceFolders>
+                    <extraReportFolders>
+                        <param>${project.basedir}</param>
+                        <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg-hanoi-towers/coverage</param>
+                        <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg2-floyd-tortoise-hare/coverage</param>
+                        <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg3-brent-tortoise-hare/coverage</param>
+                        <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg4-activity-selector/coverage</param>
+                    </extraReportFolders>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
