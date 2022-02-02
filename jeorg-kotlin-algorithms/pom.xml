@@ -1,11 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
 
+
+    <parent>
+        <groupId>org.jesperancinha.algorithms</groupId>
+        <artifactId>jeorg-algorithms-test-drives</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.jesperancinha.algorithms</groupId>
     <artifactId>jeorg-kotlin-algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
+
     <modules>
         <module>jeorg-kotlin-alg-1-hannoi-towers</module>
         <module>jeorg-kotlin-alg-2-bfs</module>
@@ -16,6 +22,7 @@
     <properties>
         <kotlin.version>1.4.30</kotlin.version>
     </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
