@@ -26,3 +26,11 @@ hs_err_pid*
 *.iml
 .idea
 target
+
+# Coverage documents
+coverage.json
+.coverage
+coverage
+
+# Nodejs
+node_modules
