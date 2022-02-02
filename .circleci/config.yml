@@ -24,11 +24,6 @@ jobs:
               sudo npm install --global yarn &&
               sudo npm install -g n &&
               sudo n 16
-
-      - run:
-          name: Install Node LTS
-          command: nvm install --lts
-
       - run:
           name: Python upgrade
           command:
