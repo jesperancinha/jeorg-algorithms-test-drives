@@ -23,7 +23,8 @@ jobs:
               sudo apt-get -y install npm &&
               sudo npm install --global yarn &&
               curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash &&
-              nvm install --lts
+              export NVM_DIR="$HOME/.nvm" &&
+              $NVM_DIR/nvm.sh install --lts
 
 
       - run:
