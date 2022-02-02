@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip "
+    directory: "/jeorg-python-algorithms"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "npm"
+    directory: "/jeorg-javascript-algorithms"
+    schedule:
+      interval: "daily"
