@@ -23,8 +23,12 @@ jobs:
               pip3 install pytest
 
       - run:
+          name: Install Packages
+          command: make install
+
+      - run:
           name: Run Python And Node Tests
-          command: coverage run --source=geo_calculator -m pytest && coverage json
+          command: make coverage
 
       - run:
           name: Compile
