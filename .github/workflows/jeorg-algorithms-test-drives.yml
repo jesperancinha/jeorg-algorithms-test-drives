@@ -19,7 +19,7 @@ jobs:
           cache: maven
 
       - name: Install Software
-        run: apt install coverage
+        run: sudo apt install coverage
 
       - name: Build and Test Externals
         run:  make install
