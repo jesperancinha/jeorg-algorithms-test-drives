@@ -19,7 +19,10 @@ jobs:
           cache: maven
 
       - name: Install Software
-        run: sudo apt install coverage
+        run: apt update -y &&
+             apt install python3-pip -y &&
+             pip3 install coverage &&
+             pip3 install pytest
 
       - name: Build and Test Externals
         run:  make install
