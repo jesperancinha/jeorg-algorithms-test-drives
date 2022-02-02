@@ -21,7 +21,7 @@ jobs:
               sudo apt update &&
               sudo apt-get -y install python3-pip &&
               sudo apt-get -y install npm &&
-              npm install --global yarn
+              sudo npm install --global yarn
 
       - run:
           name: Python upgrade
