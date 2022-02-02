@@ -21,10 +21,16 @@ jobs:
       - name: Build and Test Externals
         run:  make install
 
-      - name: Build and Test Maven
-        run: mvn clean jacoco:prepare-agent install package jacoco:report
+      - name: Coverage Externals
+        run:  make coverage
 
-      - name: Coverage Reports
+      - name: Build and Test Maven
+        run: mvn clean jacoco:prepare-agent install
+
+      - name: Coverage Maven
+        run: mvn jacoco:report
+
+      - name: Report
         run: mvn omni-coveragereporter:report
         env:
            COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
