@@ -19,10 +19,6 @@
         <module>jeorg-kotlin-alg-4-latent-semantic-analysis</module>
     </modules>
 
-    <properties>
-        <kotlin.version>1.4.30</kotlin.version>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
