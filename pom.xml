@@ -6,11 +6,16 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <java.version>17</java.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
         <omni-coveragereporter-maven-plugin.version>0.1.5</omni-coveragereporter-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
         <consolerizer.version>2.0.9</consolerizer.version>
         <kotlin.version>1.6.0</kotlin.version>
         <kotest.version>5.1.0</kotest.version>
+        <jama.version>1.0.3</jama.version>
+        <gov.nist.math.jama.version>1.1.1</gov.nist.math.jama.version>
     </properties>
 
     <packaging>pom</packaging>
@@ -31,6 +36,17 @@
                 <artifactId>kotlin-stdlib</artifactId>
                 <version>${kotlin.version}</version>
             </dependency>
+            <dependency>
+                <groupId>gov.nist.math</groupId>
+                <artifactId>jama</artifactId>
+                <version>${jama.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>gov.nist.math.jama</groupId>
+                <artifactId>gov.nist.math.jama</artifactId>
+                <version>${gov.nist.math.jama.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-test-junit</artifactId>
