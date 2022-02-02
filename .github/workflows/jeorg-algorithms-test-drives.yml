@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Software
         run: sudo apt update -y &&
-             apt install python3-pip -y &&
+             sudo apt install python3-pip -y &&
              pip3 install coverage &&
              pip3 install pytest
 
