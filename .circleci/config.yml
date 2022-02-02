@@ -1,0 +1,31 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.2
+
+workflows:
+  sample:
+    jobs:
+      - build-and-test
+
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/openjdk:17.0
+    steps:
+      - checkout
+      - run:
+          name: Python upgrade
+          command:
+              python3.8 -m pip install --upgrade pip &&
+              pip3 install coverage &&
+              pip3 install pytest
+
+      - run:
+          name: Run Python And Node Tests
+          command: coverage run --source=geo_calculator -m pytest && coverage json
+
+      - run:
+          name: Compile
+          command: mvn clean install
