@@ -15,6 +15,13 @@ jobs:
       - image: cimg/openjdk:17.0
     steps:
       - checkout
+
+      - run:
+          name: Install Packages
+          command:
+              sudo apt update &&
+              sudo apt-get -y install python3-pip
+
       - run:
           name: Python upgrade
           command:
