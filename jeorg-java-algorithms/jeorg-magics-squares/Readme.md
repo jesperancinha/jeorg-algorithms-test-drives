@@ -1,48 +1,16 @@
-# jeorg-algorithms-test-drives
+# magic-squares
 
-[![Twitter URL](https://img.shields.io/twitter/url?logoColor=blue&style=social&url=https%3A%2F%2Fimg.shields.io%2Ftwitter%2Furl%3Fstyle%3Dsocial)](https://twitter.com/intent/tweet?text=%20Checkout%20this%20%40github%20repo%20by%20%40joaofse%20%F0%9F%91%A8%F0%9F%8F%BD%E2%80%8D%F0%9F%92%BB%3A%20https%3A//github.com/jesperancinha/jeorg-algorithms-test-drives)
-[![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Algorithms%20Test%20Drives🧮&color=informational)](https://github.com/jesperancinha/jeorg-algorithms-test-drives)
-[![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
+## Introduction
 
-[![jeorg-algorithms-test-drives](https://github.com/jesperancinha/jeorg-algorithms-test-drives/actions/workflows/jeorg-algorithms-test-drives.yml/badge.svg)](https://github.com/jesperancinha/jeorg-algorithms-test-drives/actions/workflows/jeorg-algorithms-test-drives.yml)
+This is an implementation od the magic squares algorithm. This algorithm, allows mathematicians to fully build a magic square very easily and on site using very basic calculations. It only works for odd dimension squares though.
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/417c4f8d4e6f4e7d873c69188d9068a6)](https://www.codacy.com/gh/jesperancinha/jeorg-algorithms-test-drives/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/jeorg-algorithms-test-drives&amp;utm_campaign=Badge_Grade)
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/417c4f8d4e6f4e7d873c69188d9068a6)](https://www.codacy.com/gh/jesperancinha/jeorg-algorithms-test-drives/dashboard?utm_source=github.com&utm_medium=referral&utm_content=jesperancinha/jeorg-algorithms-test-drives&utm_campaign=Badge_Coverage)
-[![Coverage Status](https://coveralls.io/repos/github/jesperancinha/jeorg-algorithms-test-drives/badge.svg?branch=main)](https://coveralls.io/github/jesperancinha/jeorg-algorithms-test-drives?branch=main)
-[![codecov](https://codecov.io/gh/jesperancinha/jeorg-algorithms-test-drives/branch/main/graph/badge.svg?token=SvigsGjSpT)](https://codecov.io/gh/jesperancinha/jeorg-algorithms-test-drives)
-
-[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
-[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
-[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
-
----
-
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/java-50.png "Java")](https://www.oracle.com/nl/java/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/kotlin-50.png "Kotlin")](https://kotlinlang.org/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/python-50.png "Python")](https://www.python.org/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/nodejs-50.png "NodeJS")](https://nodejs.org/en/)
-
----
-
-Algorithm Study Project in different languages
-
-## Contents
-
-1.  [Javascript Implemented Algorithms](./jeorg-javascript-algorithms)
-2.  [Kotlin Implemented Algorithms](./jeorg-kotlin-algorithms)
-3.  [Python Implemented Algorithms](./jeorg-python-algorithms)
+I was inspired in making this when reading through the book [Magic Squares and Cubes by William Andrews](https://www.goodreads.com/book/show/43353307-magic-squares-and-cubes?from_search=true&qid=QrzuPCpoc6&rank=1)
 
 ## References
 
-### Online
+-   [How to solve a magic square of nxn when n is odd number](https://www.youtube.com/watch?reload=9&v=zoBIeGmc7No)
 
--   [Hanoi Towers Algorithm](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
--   [Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle)
-
-### Books
-
--   H. Cormen, T. E. Leiserson, C. L. Rivest, R. Stein, C. (2017). <i>Introduction to Algorithms</i>. (Third Edition). MIT Press
+-   [Magic Squares and Cubes by William Andrews](https://www.goodreads.com/book/show/43353307-magic-squares-and-cubes?from_search=true&qid=QrzuPCpoc6&rank=1)
 
 ## Buy me a coffee
 
