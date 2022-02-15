@@ -13,6 +13,8 @@
 
     <modules>
         <module>jeorg-magics-squares</module>
+        <module>jeorg-mr-string-reformat</module>
+        <module>jeorg-mr-word-count</module>
     </modules>
 
     <packaging>pom</packaging>
