@@ -6,11 +6,36 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "pip"
-    directory: "/jeorg-python-algorithms"
+    directory: "/jeorg-python-algorithms/jeorg-python-alg1-hanoi-towers"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/jeorg-python-algorithms/jeorg-python-alg2-floyd-tortoise-hare"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/jeorg-python-algorithms/jeorg-python-alg2-floyd-tortoise-hare"
     schedule:
       interval: "daily"
 
   - package-ecosystem: "npm"
-    directory: "/jeorg-javascript-algorithms"
+    directory: "/jeorg-javascript-algorithms/jeorg-javascript-alg2-floyd-tortoise-hare"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "npm"
+    directory: "/jeorg-javascript-algorithms/jeorg-javascript-alg3-brent-tortoise-hare"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "npm"
+    directory: "/jeorg-javascript-algorithms/jeorg-javascript-alg4-activity-selector"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "npm"
+    directory: "/jeorg-javascript-algorithms/jeorg-javascript-alg-hanoi-towers"
     schedule:
       interval: "daily"
