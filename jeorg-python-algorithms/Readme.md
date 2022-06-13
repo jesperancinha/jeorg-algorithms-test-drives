@@ -2,6 +2,14 @@
 
 ## Contents
 
+## Generation of requirements.txt file
+```shell
+pip install pipreqs
+pipreqs jeorg-python-alg1-hanoi-towers
+pipreqs jeorg-python-alg2-floyd-tortoise-hare
+pipreqs jeorg-python-alg3-brent
+```
+
 ## References
 
 ### Online
