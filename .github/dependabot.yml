@@ -16,7 +16,7 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "pip"
-    directory: "/jeorg-python-algorithms/jeorg-python-alg2-floyd-tortoise-hare"
+    directory: "/jeorg-python-algorithms/jeorg-python-alg3-brent"
     schedule:
       interval: "daily"
 
