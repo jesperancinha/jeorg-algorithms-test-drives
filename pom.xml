@@ -22,7 +22,7 @@
         <lombok.version>1.18.24</lombok.version>
         <junit-jupiter.version>5.9.0</junit-jupiter.version>
         <assertj-core.version>3.23.1</assertj-core.version>
-        <slf4j-api.version>2.0.0</slf4j-api.version>
+        <slf4j-api.version>2.0.1</slf4j-api.version>
     </properties>
 
     <packaging>pom</packaging>
