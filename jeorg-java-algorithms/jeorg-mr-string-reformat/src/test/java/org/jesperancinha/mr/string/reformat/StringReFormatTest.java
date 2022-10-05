@@ -1,4 +1,4 @@
-package com.steelzack.mr.string.reformat;
+package org.jesperancinha.mr.string.reformat;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

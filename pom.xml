@@ -9,20 +9,21 @@
         <java.version>17</java.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <maven-compiler-plugin.target>17</maven-compiler-plugin.target>
-        <maven-compiler-plugin.source>17</maven-compiler-plugin.source>
+        <maven-compiler-plugin.target>${java.version}</maven-compiler-plugin.target>
+        <maven-compiler-plugin.source>${java.version}</maven-compiler-plugin.source>
 
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <consolerizer.version>2.0.12</consolerizer.version>
         <kotlin.version>1.7.20</kotlin.version>
-        <kotest.version>5.4.2</kotest.version>
+        <kotest.version>5.5.0</kotest.version>
         <jama.version>1.0.3</jama.version>
         <gov.nist.math.jama.version>1.1.1</gov.nist.math.jama.version>
         <lombok.version>1.18.24</lombok.version>
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
         <assertj-core.version>3.23.1</assertj-core.version>
         <slf4j-api.version>2.0.3</slf4j-api.version>
+        <junit-platform-engine.version>1.9.0</junit-platform-engine.version>
     </properties>
 
     <packaging>pom</packaging>
@@ -122,6 +123,30 @@
                 <scope>test</scope>
             </dependency>
 
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-engine</artifactId>
+                <version>${junit-platform-engine.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-annotations-jvm</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.kotest</groupId>
+                <artifactId>kotest-runner-junit5</artifactId>
+                <version>${kotest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
