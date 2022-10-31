@@ -16,7 +16,7 @@
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <consolerizer.version>2.0.12</consolerizer.version>
         <kotlin.version>1.7.20</kotlin.version>
-        <kotest.version>5.5.2</kotest.version>
+        <kotest.version>5.5.3</kotest.version>
         <jama.version>1.0.3</jama.version>
         <gov.nist.math.jama.version>1.1.1</gov.nist.math.jama.version>
         <lombok.version>1.18.24</lombok.version>
