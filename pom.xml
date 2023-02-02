@@ -158,6 +158,7 @@
                 <artifactId>omni-coveragereporter-maven-plugin</artifactId>
                 <version>${omni-coveragereporter-maven-plugin.version}</version>
                 <configuration>
+                    <httpRequestParallelization>3</httpRequestParallelization>
                     <extraSourceFolders>
                         <param>${project.basedir}</param>
                         <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg-hanoi-towers</param>
