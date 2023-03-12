@@ -8,21 +8,22 @@
     <properties>
         <java.version>17</java.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <maven-compiler-plugin.target>17</maven-compiler-plugin.target>
-        <maven-compiler-plugin.source>17</maven-compiler-plugin.source>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.target>${java.version}</maven-compiler-plugin.target>
+        <maven-compiler-plugin.source>${java.version}</maven-compiler-plugin.source>
 
-        <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
+        <omni-coveragereporter-maven-plugin.version>0.4.2</omni-coveragereporter-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
-        <consolerizer.version>2.0.12</consolerizer.version>
-        <kotlin.version>1.7.0</kotlin.version>
-        <kotest.version>5.3.1</kotest.version>
+        <consolerizer.version>2.1.0</consolerizer.version>
+        <kotlin.version>1.8.10</kotlin.version>
+        <kotest.version>5.5.5</kotest.version>
         <jama.version>1.0.3</jama.version>
         <gov.nist.math.jama.version>1.1.1</gov.nist.math.jama.version>
-        <lombok.version>1.18.24</lombok.version>
-        <junit-jupiter.version>5.8.2</junit-jupiter.version>
-        <assertj-core.version>3.23.1</assertj-core.version>
-        <slf4j-api.version>2.0.0-alpha7</slf4j-api.version>
+        <lombok.version>1.18.26</lombok.version>
+        <junit-jupiter.version>5.9.2</junit-jupiter.version>
+        <assertj-core.version>3.24.2</assertj-core.version>
+        <slf4j-api.version>2.0.6</slf4j-api.version>
+        <junit-platform-engine.version>1.9.2</junit-platform-engine.version>
     </properties>
 
     <packaging>pom</packaging>
@@ -122,6 +123,30 @@
                 <scope>test</scope>
             </dependency>
 
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-engine</artifactId>
+                <version>${junit-platform-engine.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-annotations-jvm</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.kotest</groupId>
+                <artifactId>kotest-runner-junit5</artifactId>
+                <version>${kotest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -133,6 +158,7 @@
                 <artifactId>omni-coveragereporter-maven-plugin</artifactId>
                 <version>${omni-coveragereporter-maven-plugin.version}</version>
                 <configuration>
+                    <httpRequestParallelization>3</httpRequestParallelization>
                     <extraSourceFolders>
                         <param>${project.basedir}</param>
                         <param>${project.basedir}/jeorg-javascript-algorithms/jeorg-javascript-alg-hanoi-towers</param>

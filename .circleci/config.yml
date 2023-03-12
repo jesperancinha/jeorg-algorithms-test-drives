@@ -28,7 +28,6 @@ jobs:
       - run:
           name: Python upgrade
           command:
-              python3.8 -m pip install --upgrade pip &&
               pip3 install coverage &&
               pip3 install pytest
 
