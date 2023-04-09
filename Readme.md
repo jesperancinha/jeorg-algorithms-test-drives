@@ -16,6 +16,8 @@
 [![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/jeorg-algorithms-test-drives.svg)](#)
 
+## Technologies used
+
 ---
 
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/java-50.png "Java")](https://www.oracle.com/nl/java/)
