@@ -14,7 +14,7 @@
 
         <omni-coveragereporter-maven-plugin.version>0.4.3</omni-coveragereporter-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
-        <consolerizer.version>2.2.2</consolerizer.version>
+        <consolerizer.version>2.2.3</consolerizer.version>
         <kotlin.version>1.9.10</kotlin.version>
         <kotest.version>5.7.2</kotest.version>
         <jama.version>1.0.3</jama.version>
