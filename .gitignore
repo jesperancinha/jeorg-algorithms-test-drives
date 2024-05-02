@@ -32,8 +32,12 @@ coverage.json
 .coverage
 coverage
 
-# Nodejs
+# Node
 node_modules
+.angular
+package-lock.json
+yarn.lock
+
 
 # Python
 __pycache__

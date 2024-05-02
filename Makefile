@@ -1,3 +1,8 @@
+JAVA_SCRIPT_MODULES := jeorg-javascript-alg2-floyd-tortoise-hare \
+					   jeorg-javascript-alg3-brent-tortoise-hare \
+					   jeorg-javascript-alg4-activity-selector \
+					   jeorg-javascript-alg-hanoi-towers
+
 coverage:
 	cd jeorg-javascript-algorithms/jeorg-javascript-alg-hanoi-towers && npm run coverage
 	cd jeorg-javascript-algorithms/jeorg-javascript-alg2-floyd-tortoise-hare && npm run coverage
@@ -21,3 +26,21 @@ upgrade-local:
 	sudo n 18
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 	nvm install --lts
+remove-lock-files:
+	find . -name "package-lock.json" | xargs -I {} rm {}; \
+	find . -name "yarn.lock" | xargs -I {} rm {};
+update: remove-lock-files
+	npm install -g npm-check-updates
+	git pull
+	npm install caniuse-lite
+	npm install -g npm-check-updates
+	@for location in $(JAVA_SCRIPT_MODULES); do \
+  		export CURRENT=$(shell pwd); \
+  		echo "Building jeorg-javascript-algorithms/$$location..."; \
+		pwd; \
+		cd jeorg-javascript-algorithms/$$location; \
+		pwd; \
+		make b; \
+		gradle -x test; \
+		cd jeorg-javascript-algorithms/$$CURRENT; \
+	done
