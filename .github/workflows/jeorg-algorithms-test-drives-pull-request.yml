@@ -6,6 +6,9 @@ name: jeorg-algorithms-test-drives-pull_request
 on:
   pull_request:
     branches: [ main ]
+  push:
+    branches:
+      - '!master'
 
 jobs:
   build:
