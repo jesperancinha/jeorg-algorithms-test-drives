@@ -34,13 +34,16 @@ update: remove-lock-files
 	git pull
 	npm install caniuse-lite
 	npm install -g npm-check-updates
+	npm install -g jest
 	@for location in $(JAVA_SCRIPT_MODULES); do \
   		export CURRENT=$(shell pwd); \
   		echo "Building jeorg-javascript-algorithms/$$location..."; \
 		pwd; \
 		cd jeorg-javascript-algorithms/$$location; \
 		pwd; \
-		make b; \
-		gradle -x test; \
-		cd jeorg-javascript-algorithms/$$CURRENT; \
+ 		yarn; \
+ 		ncu -u; \
+ 		yarn ; \
+ 		npm test; \
+		cd $$CURRENT; \
 	done
