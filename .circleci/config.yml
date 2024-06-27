@@ -11,10 +11,12 @@ workflows:
 jobs:
   build-and-test:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: eclipse-temurin:21-alpine
     steps:
       - checkout
 
+      - run: apk add maven
+      - run: apk add make
       - run:
           name: Install Packages
           command:
