@@ -21,6 +21,7 @@ jobs:
           name: Install Packages
           command:
             apk add python3 py3-pip &&
+            apk add py3-virtualenv &&
             apk add nodejs &&
             apk add npm &&
             npm install -g yarn
@@ -28,8 +29,10 @@ jobs:
       - run:
           name: Python upgrade
           command:
-              pip3 install coverage &&
-              pip3 install pytest
+            python3 -m venv myenv &&
+            source myenv/bin/activate &&
+            pip3 install coverage &&
+            pip3 install pytest
 
       - run:
           name: Install Packages
