@@ -41,6 +41,7 @@ yarn.lock
 
 # Python
 __pycache__
+myenv
 
 ## Automation
 cypressUpdateOne.sh
