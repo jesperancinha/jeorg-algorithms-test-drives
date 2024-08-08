@@ -12,7 +12,7 @@
         <maven-compiler-plugin.target>${java.version}</maven-compiler-plugin.target>
         <maven-compiler-plugin.source>${java.version}</maven-compiler-plugin.source>
 
-        <omni-coveragereporter-maven-plugin.version>0.4.3</omni-coveragereporter-maven-plugin.version>
+        <omni-coveragereporter-maven-plugin.version>0.4.4</omni-coveragereporter-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <consolerizer.version>2.2.3</consolerizer.version>
         <kotlin.version>2.0.10</kotlin.version>
