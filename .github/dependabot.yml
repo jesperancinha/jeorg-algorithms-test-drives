@@ -14,6 +14,11 @@ updates:
       kotlin:
         patterns:
           - "*kotlin*"
+      jupiter:
+        patterns:
+          - "*jupiter"
+          - "jupiter*"
+          - "*jupiter*"
 
   - package-ecosystem: "pip"
     directory: "/jeorg-python-algorithms/jeorg-python-alg1-hanoi-towers"
