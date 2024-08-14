@@ -19,6 +19,9 @@ updates:
           - "*jupiter"
           - "jupiter*"
           - "*jupiter*"
+          - "junit*"
+          - "*junit"
+          - "*junit*"
 
   - package-ecosystem: "pip"
     directory: "/jeorg-python-algorithms/jeorg-python-alg1-hanoi-towers"
