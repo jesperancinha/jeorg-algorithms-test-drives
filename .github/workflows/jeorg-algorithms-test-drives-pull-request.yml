@@ -1,9 +1,6 @@
 name: jeorg-algorithms-test-drives-pull_request
 
 on:
-  pull_request_target:
-    branches:
-      - '**'
   create:
     branches:
       - '**'
