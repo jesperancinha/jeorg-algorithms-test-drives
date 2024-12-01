@@ -37,7 +37,7 @@ node_modules
 .angular
 package-lock.json
 yarn.lock
-
+/package.json
 
 # Python
 __pycache__
