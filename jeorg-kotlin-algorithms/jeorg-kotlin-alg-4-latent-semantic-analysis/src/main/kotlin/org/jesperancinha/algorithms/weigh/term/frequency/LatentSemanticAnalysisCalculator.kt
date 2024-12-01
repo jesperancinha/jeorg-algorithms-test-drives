@@ -55,8 +55,8 @@ class LatentSemanticAnalysisCalculator(sentences: List<String>) {
     ) {
         val word1Sanitized = toSanitizedWordForm(word1)
         val word2Sanitized = toSanitizedWordForm(word2)
-        val word1Filtered = resultTable.filter { word1Sanitized.startsWith(it[0].toString().toLowerCase()) }[0]
-        val word2Filtered = resultTable.filter { word2Sanitized.startsWith(it[0].toString().toLowerCase()) }[0]
+        val word1Filtered = resultTable.filter { word1Sanitized.startsWith(it[0].toString().lowercase()) }[0]
+        val word2Filtered = resultTable.filter { word2Sanitized.startsWith(it[0].toString().lowercase()) }[0]
         ConsolerizerComposer.outSpace()
             .magenta(
                 "The semantic proximity between word %s and %s is %.2f%s",
@@ -119,7 +119,7 @@ class LatentSemanticAnalysisCalculator(sentences: List<String>) {
         print("U =")
         val u = singularValueDecomposition.u
         u.print(2, 2)
-        ConsolerizerComposer.outSpace().red("S =");
+        ConsolerizerComposer.outSpace().red("S =")
         singularValueDecomposition.s.print(2, 2)
         ConsolerizerComposer.outSpace().green("V =")
         singularValueDecomposition.v.print(2, 2)
@@ -138,7 +138,7 @@ class LatentSemanticAnalysisCalculator(sentences: List<String>) {
                     .replace(".", "")
                     .replace(",", "")
                     .replace("!", "")
-                    .split(" ").map { word -> word.toLowerCase() }
+                    .split(" ").map { word -> word.lowercase() }
             }
 
 
@@ -158,7 +158,7 @@ class LatentSemanticAnalysisCalculator(sentences: List<String>) {
                 it
             )
             wordsPerSentence.forEach { listWords ->
-                mutableListOf.add(listWords.filter { word -> word.startsWith(it) }.count())
+                mutableListOf.add(listWords.count { word -> word.startsWith(it) })
             }
             mutableListOf.toArray()
         }
@@ -182,14 +182,14 @@ class LatentSemanticAnalysisCalculator(sentences: List<String>) {
     }
 
     private fun toSanitizedWordForm(it: String): String {
-        val findLast = roots.findLast { root -> it.toLowerCase().startsWith(root) }
+        val findLast = roots.findLast { root -> it.lowercase().startsWith(root) }
         return if (findLast != null) {
             if (it.length >= findLast.length) {
-                findLast.toLowerCase()
+                findLast.lowercase()
             } else
-                it.toLowerCase()
+                it.lowercase()
         } else {
-            it.toLowerCase()
+            it.lowercase()
         }
     }
 }
