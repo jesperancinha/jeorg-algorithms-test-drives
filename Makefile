@@ -5,6 +5,8 @@ JAVA_SCRIPT_MODULES := jeorg-javascript-alg2-floyd-tortoise-hare \
 					   jeorg-javascript-alg4-activity-selector \
 					   jeorg-javascript-alg-hanoi-towers
 b: update
+build-maven:
+	mvn clean install
 coverage:
 	source myenv/bin/activate;\
 	cd jeorg-javascript-algorithms/jeorg-javascript-alg-hanoi-towers && npm run coverage
