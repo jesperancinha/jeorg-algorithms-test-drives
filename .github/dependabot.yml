@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "yearly"
     groups:
       postgresql:
         patterns:
@@ -26,34 +26,34 @@ updates:
   - package-ecosystem: "pip"
     directory: "/jeorg-python-algorithms/jeorg-python-alg1-hanoi-towers"
     schedule:
-      interval: "daily"
+      interval: "yearly"
 
   - package-ecosystem: "pip"
     directory: "/jeorg-python-algorithms/jeorg-python-alg2-floyd-tortoise-hare"
     schedule:
-      interval: "daily"
+      interval: "yearly"
 
   - package-ecosystem: "pip"
     directory: "/jeorg-python-algorithms/jeorg-python-alg3-brent"
     schedule:
-      interval: "daily"
+      interval: "yearly"
 
   - package-ecosystem: "npm"
     directory: "/jeorg-javascript-algorithms/jeorg-javascript-alg2-floyd-tortoise-hare"
     schedule:
-      interval: "daily"
+      interval: "yearly"
 
   - package-ecosystem: "npm"
     directory: "/jeorg-javascript-algorithms/jeorg-javascript-alg3-brent-tortoise-hare"
     schedule:
-      interval: "daily"
+      interval: "yearly"
 
   - package-ecosystem: "npm"
     directory: "/jeorg-javascript-algorithms/jeorg-javascript-alg4-activity-selector"
     schedule:
-      interval: "daily"
+      interval: "yearly"
 
   - package-ecosystem: "npm"
     directory: "/jeorg-javascript-algorithms/jeorg-javascript-alg-hanoi-towers"
     schedule:
-      interval: "daily"
+      interval: "yearly"
